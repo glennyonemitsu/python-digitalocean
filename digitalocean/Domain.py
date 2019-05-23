@@ -67,6 +67,9 @@ class Domain(BaseAPI):
         if kwargs.get("weight", None):
             data['weight'] = kwargs.get("weight", None)
 
+        if kwargs.get("ttl", None):
+            data["ttl"] = kwargs.get("ttl", None)
+
         return self.get_data(
             "domains/%s/records" % self.name,
             type=POST,
